@@ -27,7 +27,6 @@ public class Anagrams {
 				while (!Character.isLetter(reversedBuffer[j++])) {
 				}
 				;
-
 				buffer[i] = reversedBuffer[j - 1];
 			}
 		}
@@ -39,7 +38,7 @@ public class Anagrams {
 		Anagrams anagram = new Anagrams();
 		String sentenceBefore = "a1bcd2ef1 3ghij" + '\n' + "4  5";
 		String sentenceAfter = anagram.makeAnagram(sentenceBefore);
-		System.out.println("Sentence before: "+sentenceBefore);
-		System.out.println("Sentence after: "+sentenceAfter);
+		System.out.println("Sentence before: " + sentenceBefore);
+		System.out.println("Sentence after: " + sentenceAfter);
 	}
 }
