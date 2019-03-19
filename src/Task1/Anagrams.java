@@ -3,68 +3,44 @@ package Task1;
 import java.util.*;
 
 public class Anagrams {
-	// necessary for visual comparison
+	// maybe it will be useful for visual comparison
 	private String inputString;
-	private StringBuilder outputStringBuilder;
+	private String outputString;
 
 	public Anagrams(String source) {
 		inputString = source.replaceAll("  ", " ");
-		outputStringBuilder = new StringBuilder();
+		outputString = "";
 	}
 
 	public void process() {
-		ArrayList<String> wordsArray = new ArrayList<>();
-		Collections.addAll(wordsArray, inputString.split(" "));
-
-		// use collect to assemble results string
-		outputStringBuilder = wordsArray.parallelStream().collect(StringBuilder::new,
-				(sBuilder, word) -> sBuilder.append(reverseWord(word)),
-				(sBuilder1, sBuilder2) -> sBuilder1.append(sBuilder2));
+		outputString = "";
+		//reverse every word in phrase
+		for(String word: inputString.split(" ")) {
+			outputString += reverseWord(word);
+		}
 	}
 
-	private StringBuilder reverseWord(String someWord) {
-		// i want to refuse of index manipulating, so i use 2 iterators in function walkingReversely
-		LinkedList<String> letterList = new LinkedList<>();
-		Collections.addAll(letterList, someWord.split(""));
-
-		// travel linked list
-		StringBuilder strBuilder = walkingReversely(letterList);
-
-		// separate current word from another
-		strBuilder.append(" ");
-
-		return strBuilder;
-	}
-
-	private StringBuilder walkingReversely(LinkedList<String> letterList) {
-		StringBuilder strBuilder = new StringBuilder();
-		Iterator<String> iterator = letterList.listIterator(), descIterator = letterList.descendingIterator();
-
-		// char has useful method isLetter
-		char LetterOrOther;
-
-		while (iterator.hasNext()) {
-			// at previous step i split my string, so i get element length by one char
-			LetterOrOther = iterator.next().charAt(0);
-			if (Character.isLetter(LetterOrOther)) {
+	private String reverseWord(String someWord) {
+		//separate word from another
+		String reverseWord = (outputString == "")? "":" ";		
+		for(int i = 0, j = someWord.length();i < someWord.length();i++) {	
+			if (Character.isLetter(someWord.charAt(i))) {
 
 				do {
-					LetterOrOther = descIterator.next().charAt(0);
-				} while (!Character.isLetter(LetterOrOther));
-				// 1. both iterators point to the letter, get letter from desc iterator
-				strBuilder.append(LetterOrOther);
+				} while (!Character.isLetter(someWord.charAt(--j)));
+				// 1. both indexes point to the letter, get letter from desc index
+				reverseWord += someWord.charAt(j);
 
-				// 2. asc iterator point to non letter symbol, it stay on the same place
+				// 2. asc index point to non letter symbol, it stay on the same place
 			} else
-				strBuilder.append(LetterOrOther);
+				reverseWord += someWord.charAt(i);
 		}
-		return strBuilder;
-
+		return  reverseWord;
 	}
-
+	
 	@Override
 	public String toString() {
-		return outputStringBuilder.toString().trim();
+		return outputString;
 	}
 
 	public String getInputString() {
