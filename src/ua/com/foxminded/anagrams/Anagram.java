@@ -1,4 +1,4 @@
-package Task1;
+package ua.com.foxminded.anagrams;
 
 public class Anagram {
     public String makeAnagram(String sentence) {

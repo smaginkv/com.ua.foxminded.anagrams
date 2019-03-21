@@ -1,5 +1,4 @@
-package Task1;
-
+package ua.com.foxminded.anagrams;
 
 public class Main {
     public static void main(String[] args) {
