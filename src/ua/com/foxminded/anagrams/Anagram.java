@@ -1,9 +1,12 @@
 package ua.com.foxminded.anagrams;
 
 public class Anagram {
+
+    final String SPACESEXPRESSION = "[\\n|\\r|\\t|\\u0020]+";
+
     public String makeAnagram(String sentence) {
         String outputSentence = "";
-        for (String word : sentence.split("[\\n|\\r|\\t|\\u0020]+")) {
+        for (String word : sentence.split(SPACESEXPRESSION)) {
             outputSentence += reverseWord(word);
         }
         return outputSentence.trim();
@@ -27,6 +30,6 @@ public class Anagram {
             }
         }
 
-        return String.copyValueOf(buffer) + '\u0020';
+        return String.copyValueOf(buffer) + " ";
     }
 }

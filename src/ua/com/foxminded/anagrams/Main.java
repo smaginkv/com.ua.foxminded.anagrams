@@ -1,15 +1,22 @@
 package ua.com.foxminded.anagrams;
 
-public class Main {
-    public static void main(String[] args) {
-        Anagram anagram = new Anagram();
-        String sentenceBefore = "abcd efgh", stringToConsole = "";
-        stringToConsole = String.format("E.g. \"%s\" => \"%s\"", sentenceBefore, anagram.makeAnagram(sentenceBefore));
-        System.out.println(stringToConsole);
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-        sentenceBefore = "a1bcd efg!h";
-        stringToConsole = String.format("E.g. \"%s\" => \"%s\"", sentenceBefore, anagram.makeAnagram(sentenceBefore));
-        System.out.println(stringToConsole);
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Anagram anagram = new Anagram();
+        String sentenceBefore, stringToConsole;
+
+        InputStreamReader consoleStream = new InputStreamReader(System.in);
+        BufferedReader consoleBuffer = new BufferedReader(consoleStream);
+        System.out.println("Please, type in anagram, for input press ENTER");
+        System.out.println("An empty line or Ctrl-Z terminates the program");
+        while ((sentenceBefore = consoleBuffer.readLine()) != null && sentenceBefore.length() != 0) {
+            stringToConsole = String.format("\"%s\" => \"%s\"", sentenceBefore, anagram.makeAnagram(sentenceBefore));
+            System.out.println(stringToConsole);
+        }
     }
 
 }
