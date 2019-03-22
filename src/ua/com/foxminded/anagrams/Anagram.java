@@ -2,10 +2,6 @@ package ua.com.foxminded.anagrams;
 
 public class Anagram {
     public String makeAnagram(String sentence) {
-        return reverseString(sentence);
-    }
-
-    private String reverseString(String sentence) {
         String outputSentence = "";
         for (String word : sentence.split("[\\n|\\r|\\t|\\u0020]+")) {
             outputSentence += reverseWord(word);
