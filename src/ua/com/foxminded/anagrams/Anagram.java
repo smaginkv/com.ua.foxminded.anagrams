@@ -29,7 +29,6 @@ public class Anagram {
                 while (!Character.isLetter(reversedBuffer[j])) {
                     j++;
                 }
-                ;
                 // if it is letter change to reverse letter
                 buffer[i] = reversedBuffer[j++];
             }
