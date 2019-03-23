@@ -2,7 +2,7 @@ package ua.com.foxminded.anagrams;
 
 public class Anagram {
 
-    final String ONE_OR_MULTIPLE_WHITESPACES_REGEXP = "[\\n|\\r|\\t| ]+";
+    final String ONE_OR_MULTIPLE_WHITESPACES_REGEXP = "\\s+";
 
     public String makeAnagram(String sentence) {
         String outputSentence = "";
