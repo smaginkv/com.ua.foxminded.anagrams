@@ -1,4 +1,3 @@
-
 target/
 
 pom.xml.tag
@@ -64,3 +63,5 @@ local.properties
 
 ## Locally stored "Eclipse launch configurations"
 *.launch
+/.project
+/.classpath
