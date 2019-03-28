@@ -18,47 +18,47 @@ class AnagramTest {
     @DisplayName("Strategy: happy path ")
     class HappyPath {
         @Test
-        void ShouldMakeAnagramCorrectWhen1Word() {
+        void shouldMakeAnagramCorrectWhen1Word() {
             assertEquals("edc1ba", anagram.makeAnagram("abc1de"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2Word() {
+        void shouldMakeAnagramCorrectWhen2Word() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3Word() {
+        void shouldMakeAnagramCorrectWhen3Word() {
             assertEquals("cb1a 2fed3 j4ihj", anagram.makeAnagram("ab1c 2def3 j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAndTab() {
+        void shouldMakeAnagramCorrectWhen2WordAndTab() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\t' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAndTab() {
+        void shouldMakeAnagramCorrectWhen3WordAndTab() {
             assertEquals("cb1a 2fed3 j4ihj", anagram.makeAnagram("ab1c" + '\t' + "2def3" + '\t' + "j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAndCarriageReturn() {
+        void shouldMakeAnagramCorrectWhen2WordAndCarriageReturn() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\r' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAndCarriageReturn() {
+        void shouldMakeAnagramCorrectWhen3WordAndCarriageReturn() {
             assertEquals("cb1a 2fed3 j4ihj", anagram.makeAnagram("ab1c" + '\r' + "2def3" + '\r' + "j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAndNewline() {
+        void shouldMakeAnagramCorrectWhen2WordAndNewline() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\n' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAndNewline() {
+        void shouldMakeAnagramCorrectWhen3WordAndNewline() {
             assertEquals("cb1a 2fed3 j4ihj", anagram.makeAnagram("ab1c" + '\n' + "2def3" + '\n' + "j4hij"));
         }
     }
@@ -67,12 +67,12 @@ class AnagramTest {
     @DisplayName("Strategy: ñorner cases")
     class CornerCases {
         @Test
-        void ShouldMakeAnagramCorrectWhenEmptyWord() {
+        void shouldMakeAnagramCorrectWhenEmptyWord() {
             assertEquals("", anagram.makeAnagram(""));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhenWordIsUnusualSymbols() {
+        void shouldMakeAnagramCorrectWhenWordIsUnusualSymbols() {
             assertEquals("!@#1$%^&2*()_+3", anagram.makeAnagram("!@#1$%^&2*()_+3"));
         }
     }
@@ -81,44 +81,44 @@ class AnagramTest {
     @DisplayName("Strategy: white spaces")
     class Whitespaces {
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAnd2Whitespaces() {
+        void shouldMakeAnagramCorrectWhen2WordAnd2Whitespaces() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f  ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAnd2Whitespaces() {
+        void shouldMakeAnagramCorrectWhen3WordAnd2Whitespaces() {
             assertEquals("cb1a 2fed3 j4ihj", anagram.makeAnagram("ab1c  2def3  j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAnd2Tabs() {
+        void shouldMakeAnagramCorrectWhen2WordAnd2Tabs() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\t' + '\t' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAnd2Tabs() {
+        void shouldMakeAnagramCorrectWhen3WordAnd2Tabs() {
             assertEquals("cb1a 2fed3 j4ihj",
                     anagram.makeAnagram("ab1c" + '\t' + '\t' + "2def3" + '\t' + '\t' + "j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAnd2CarriageReturns() {
+        void shouldMakeAnagramCorrectWhen2WordAnd2CarriageReturns() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\r' + '\r' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAnd2CarriageReturns() {
+        void shouldMakeAnagramCorrectWhen3WordAnd2CarriageReturns() {
             assertEquals("cb1a 2fed3 j4ihj",
                     anagram.makeAnagram("ab1c" + '\r' + '\r' + "2def3" + '\r' + '\r' + "j4hij"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen2WordAnd2Newlines() {
+        void shouldMakeAnagramCorrectWhen2WordAnd2Newlines() {
             assertEquals("fhdg12f fhfhhg3", anagram.makeAnagram("fgdh12f" + '\n' + '\n' + "ghhfhf3"));
         }
 
         @Test
-        void ShouldMakeAnagramCorrectWhen3WordAnd2Newlines() {
+        void shouldMakeAnagramCorrectWhen3WordAnd2Newlines() {
             assertEquals("cb1a 2fed3 j4ihj",
                     anagram.makeAnagram("ab1c" + '\n' + '\n' + "2def3" + '\n' + '\n' + "j4hij"));
         }
